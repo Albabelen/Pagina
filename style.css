@@ -27,3 +27,26 @@ body {
     color: white;
     cursor: pointer;
 }
+.heart-rain {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    clip-path: polygon(
+        50% 0%,
+        100% 50%,
+        75% 100%,
+        50% 75%,
+        25% 100%,
+        0% 50%
+    );
+    animation: heartRainAnimation 1s ease-out;
+}
+
+@keyframes heartRainAnimation {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
