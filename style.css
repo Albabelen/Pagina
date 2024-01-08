@@ -1,9 +1,8 @@
 body {
     margin: 0;
     overflow: hidden;
-    background-color: black !important;
+    background-color: black;
     color: white;
-    font-size: 16px;
 }
 
 #question {
