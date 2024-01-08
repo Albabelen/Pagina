@@ -28,3 +28,17 @@ function createStar() {
 }
 
 createStarRain();  // Inicia la lluvia de estrellas al cargar la página
+// Función para mover el botón "No" cuando cambia la orientación o tamaño de la ventana
+function moveNoOnOrientationChange() {
+    var noButton = document.getElementById('no');
+    noButton.style.left = Math.random() * 95 + "vw";
+    noButton.style.top = Math.random() * 95 + "vh";
+}
+
+// Inicia la lluvia de estrellas al cargar la página
+createStarRain();
+
+// Añade un evento para detectar cambios de orientación o tamaño de la ventana
+window.addEventListener('orientationchange', moveNoOnOrientationChange);
+window.addEventListener('resize', moveNoOnOrientationChange);
+
