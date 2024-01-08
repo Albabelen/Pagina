@@ -1,26 +1,44 @@
-function showNo() {
-    window.location.href = "https://www.youtube.com/embed/klcQNKfHNlQ?si=RUxlfAFIXYwkC4Lv";
+body {
+    margin: 0;
+    overflow: hidden;
 }
 
-function moveNo() {
-    var noButton = document.getElementById('no');
-    noButton.style.left = Math.random() * 95 + "vw";
-    noButton.style.top = Math.random() * 95 + "vh";
-
-    createHeartRain();  // Agrega esta línea para iniciar la lluvia de corazones cada vez que "No" se mueve
-
-    setTimeout(function () {
-        alert("¿Entonces me vas a clavar una duda? :(");
-    }, 5000);
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
-function createHeartRain() {
-    for (var i = 0; i < 10; i++) {
-        setTimeout(function () {
-            createHeart();
-        }, i * 300);  // Ajusta el intervalo de creación de corazones según tus preferencias
+#question {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 36px;
+    color: white;
+}
+
+#no {
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+.star-rain {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    animation: starRainAnimation 1s ease-out infinite;
+}
+
+@keyframes starRainAnimation {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
     }
 }
-
-setInterval(moveNo, 2000);  // Mueve "No" cada 2 segundos
-setInterval(createHeartRain, 2000);  // Crea lluvia de corazones cada 2 segundos
