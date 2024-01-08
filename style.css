@@ -18,7 +18,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 24px;
+    font-size: 36px; /* Aumenta el tamaño de la letra según tus preferencias */
     color: white;
 }
 
@@ -27,6 +27,7 @@ body {
     color: white;
     cursor: pointer;
 }
+
 .heart-rain {
     position: absolute;
     width: 20px;
@@ -49,4 +50,3 @@ body {
         opacity: 0;
     }
 }
-
