@@ -1,51 +1,9 @@
 body {
     margin: 0;
     overflow: hidden;
-}
-
-#background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-#question {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 36px;
-    color: white;
-}
-
-#no {
-    font-size: 18px;
-    color: white;
-    cursor: pointer;
-}
-
-.star-rain {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background-color: white;
-    animation: starRainAnimation 1s ease-out infinite;
-}
-
-@keyframes starRainAnimation {
-    to {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-body {
-    margin: 0;
-    overflow: hidden;
     background-color: black;
+    color: white;
+    font-size: 16px;
 }
 
 #background {
@@ -63,18 +21,13 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 36px;
-    color: white;
-    text-decoration: underline;
-    padding: 20px;
-    border: 2px solid white;
-    border-radius: 10px;
+    font-size: 24px;
 }
 
-#no {
-    font-size: 18px;
-    color: white;
+#yes, #no, #additional-info button {
+    font-size: 16px;
     cursor: pointer;
+    padding: 10px 20px;
 }
 
 .star-rain {
@@ -83,15 +36,46 @@ body {
     height: 2px;
     background-color: white;
     animation: starRainAnimation 1s ease-out infinite;
+}
+
+.gif-container {
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    z-index: -1;
 }
 
 .gif-image {
-    width: 100%;
-    max-width: 400px;
-    border: 10px solid white;
+    width: 80px;
+    border: 5px solid white;
     display: block;
     margin: 20px auto;
 }
 
-/* ... (código posterior) */
+.gif-container.bottom-left,
+.gif-container.bottom-right,
+.gif-container.top-right {
+    top: auto;
+    bottom: auto;
+    right: auto;
+    left: auto;
+}
 
+#additional-info {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#additional-info p {
+    color: red;
+    text-decoration: underline;
+}
+
+#additional-info button {
+    color: white;
+    background-color: red;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
