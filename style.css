@@ -18,7 +18,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 36px; /* Aumenta el tamaño de la letra según tus preferencias */
+    font-size: 36px;
     color: white;
 }
 
@@ -28,23 +28,15 @@ body {
     cursor: pointer;
 }
 
-.heart-rain {
+.star-rain {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    clip-path: polygon(
-        50% 0%,
-        100% 50%,
-        75% 100%,
-        50% 75%,
-        25% 100%,
-        0% 50%
-    );
-    animation: heartRainAnimation 1s ease-out;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    animation: starRainAnimation 1s ease-out infinite;
 }
 
-@keyframes heartRainAnimation {
+@keyframes starRainAnimation {
     to {
         transform: translateY(100vh) rotate(360deg);
         opacity: 0;
