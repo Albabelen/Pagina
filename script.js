@@ -1,44 +1,30 @@
-body {
-    margin: 0;
-    overflow: hidden;
+function redirectToYouTube() {
+    window.location.href = "https://www.youtube.com/embed/klcQNKfHNlQ?si=RUxlfAFIXYwkC4Lv";
 }
 
-#background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+function moveNo() {
+    var noButton = document.getElementById('no');
+    noButton.style.left = Math.random() * 95 + "vw";
+    noButton.style.top = Math.random() * 95 + "vh";
+
+    setTimeout(function () {
+        alert("¿Entonces me vas a clavar una duda? :(");
+    }, 500);
 }
 
-#question {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 36px;
-    color: white;
-}
-
-#no {
-    font-size: 18px;
-    color: white;
-    cursor: pointer;
-}
-
-.star-rain {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background-color: white;
-    animation: starRainAnimation 1s ease-out infinite;
-}
-
-@keyframes starRainAnimation {
-    to {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
+function createStarRain() {
+    for (var i = 0; i < 10; i++) {
+        setTimeout(function () {
+            createStar();
+        }, i * 300);  // Ajusta el intervalo de creación de estrellas según tus preferencias
     }
 }
+
+function createStar() {
+    var star = document.createElement("div");
+    star.className = "star-rain";
+    star.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(star);
+}
+
+createStarRain();  // Inicia la lluvia de estrellas al cargar la página
